@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding Invitation</title>
+
+  <!-- Meta tags for social share -->
+  <meta name="description" content="Wedding & Engagement Invitation" />
+  <meta property="og:title" content="Wedding Invitation" />
+  <meta property="og:description" content="We invite you to celebrate with us!" />
+  <meta property="og:image" content="assets/images/couple.jpg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Ms+Madi&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=The+Nautigal:wght@400;700&family=Viaoda+Libre&display=swap"
+    rel="stylesheet" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Background Music Audio -->
+  <audio id="bg-music" preload="auto" loop>
+    <source src="assets/audio/music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Floating Music Toggle Button -->
+  <button id="music-toggle-btn" class="music-btn" aria-label="Toggle Music" title="Play / Pause Music">
+    <div class="music-disc">
+      <i class="fa-solid fa-compact-disc"></i>
+    </div>
+    <span class="music-wave">
+      <span></span><span></span><span></span><span></span>
+    </span>
+  </button>
+
+  <!-- Floating Auto-scroll Status Pill -->
+  <div id="scroll-pill" class="scroll-status-pill d-none" title="Click anywhere to pause / resume auto-scroll">
+    <span class="scroll-pill-dot"></span>
+    <span id="scroll-pill-text">Auto scroll</span>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- 1. ENVELOPE LANDING SCREEN                     -->
+  <!-- ============================================== -->
+  <div id="envelope-screen" class="envelope-wrapper">
+    <!-- Ambient Falling Particles Container -->
+    <div id="particles-container" class="particles-container"></div>
+
+    <!-- Envelope Container -->
+    <div class="envelope-card-container">
+
+      <!-- Wax Seal Button -->
+      <button id="wax-seal" class="wax-seal" aria-label="Open Invitation" title="Click to open">
+        <svg viewBox="0 0 24 24" class="wax-heart-icon">
+          <path
+            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z">
+          </path>
+        </svg>
+      </button>
+
+      <!-- Envelope Paper Card -->
+      <div class="envelope-card shadow-lg">
+        <!-- Corner Floral Decorations -->
+        <div class="envelope-flowers">
+          <img src="assets/images/flower2-decoration.webp" alt="Flower Top Left" class="flower-corner flower-tl" />
+          <img src="assets/images/flower2-decoration.webp" alt="Flower Bottom Right" class="flower-corner flower-br" />
+        </div>
+
+        <!-- Envelope Card Content -->
+        <div class="envelope-content text-center">
+          <h1 class="envelope-names">
+            <span id="env-groom-name" class="d-block name-part"></span>
+            <span class="d-block ampersand-part">&amp;</span>
+            <span id="env-bride-name" class="d-block name-part"></span>
+          </h1>
+
+          <div class="envelope-divider my-2">
+            <span class="divider-line"></span>
+            <span class="divider-symbol">❦</span>
+            <span class="divider-line"></span>
+          </div>
+
+          <div class="envelope-date mb-3">
+            <span id="env-date-text"></span>
+          </div>
+
+          <p id="env-invites-text" class="envelope-invites mb-4"></p>
+
+          <!-- Open Button -->
+          <button id="open-btn" class="btn-open-invitation">
+            <span>Open</span>
+            <span class="btn-shine"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- 2. MAIN INVITATION SCREEN                      -->
+  <!-- ============================================== -->
+  <div id="invitation-screen" class="invitation-wrapper d-none">
+
+    <!-- Paper Texture Overlay -->
+    <div class="paper-texture-bg"></div>
+
+    <div class="invitation-container mx-auto">
+
+      <!-- ================= HEADER SECTION ================= -->
+      <header class="invitation-header text-center position-relative">
+        <!-- Subtle Castle Background Sketch -->
+        <img src="assets/images/castle-background.webp" alt="Castle Sketch" class="castle-watermark castle-header" />
+
+        <p class="save-the-date-title mb-4">SAVE THE DATE</p>
+
+        <!-- Floating Couple Polaroid in Envelope -->
+        <div class="envelope-hero-box mx-auto">
+          <div class="envelope-hero-inner position-relative">
+            <!-- Envelope Back -->
+            <img src="assets/images/envelope-background.webp" alt="Envelope" class="envelope-back-img" />
+
+            <!-- Floating Polaroid Couple Photo -->
+            <div class="polaroid-frame-floating">
+              <div class="polaroid-card">
+                <img id="couple-photo-img" src="" alt="Couple Photo" class="couple-photo" />
+              </div>
+            </div>
+
+            <!-- Floating Flower on Envelope -->
+            <div class="floating-envelope-flower">
+              <img src="assets/images/flower2-decoration.webp" alt="Flower" class="envelope-flower-img" />
+            </div>
+
+            <!-- Envelope Front Cover -->
+            <img src="assets/images/envelope-cover.webp" alt="Envelope Cover" class="envelope-front-img" />
+          </div>
+        </div>
+
+        <!-- Couple Big Names with Script Ampersand Watermark -->
+        <div class="hero-names-wrapper position-relative mt-4">
+          <p id="hero-groom-name" class="hero-name"></p>
+          <span class="hero-ampersand">&amp;</span>
+          <p id="hero-bride-name" class="hero-name"></p>
+        </div>
+      </header>
+
+      <!-- ================= CEREMONY INFO CARD ================= -->
+      <section class="card-section position-relative my-4">
+        <!-- Floating Floral Decoration on Right -->
+        <div class="floating-flower-aside flower-aside-right">
+          <img src="assets/images/flower2-decoration.webp" alt="Flower Decoration" />
+        </div>
+
+        <div class="vintage-dark-card shadow">
+          <div class="card-paper-texture"></div>
+
+          <div class="card-inner-content text-center">
+            <h2 id="ceremony-headline" class="card-headline"></h2>
+
+            <p id="ceremony-quote-text" class="card-quote"></p>
+
+            <div class="couple-ceremony-details">
+              <h3 id="groom-fullname-text" class="couple-fullname"></h3>
+              <div id="groom-role-text" class="couple-role"></div>
+
+              <div class="couple-ampersand-script">&amp;</div>
+
+              <h3 id="bride-fullname-text" class="couple-fullname"></h3>
+              <div id="bride-role-text" class="couple-role"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PARTY INFO & COUNTDOWN CARD ================= -->
+      <section class="card-section position-relative my-4">
+        <!-- Floating Floral Decoration on Left -->
+        <div class="floating-flower-aside flower-aside-left">
+          <img src="assets/images/flower2-decoration.webp" alt="Flower Decoration" />
+        </div>
+
+        <div class="vintage-dark-card shadow">
+          <div class="card-paper-texture"></div>
+
+          <div class="card-inner-content text-center">
+            <h2 id="party-headline" class="card-headline"></h2>
+
+            <h3 id="party-subheadline" class="party-subheadline"></h3>
+
+            <!-- Time & Day -->
+            <div class="party-time-badge d-flex justify-content-center align-items-center gap-3">
+              <span id="party-time-text"></span>
+              <span class="badge-dot">•</span>
+              <span id="party-day-text"></span>
+            </div>
+
+            <!-- Date Highlight -->
+            <div class="date-highlight-row d-flex justify-content-center align-items-center gap-3 my-3">
+              <span id="party-day-number" class="date-day-number"></span>
+              <div class="date-vertical-divider"></div>
+              <div class="date-month-year text-start">
+                <span id="party-month-text" class="d-block date-month"></span>
+                <span id="party-year-text" class="d-block date-year"></span>
+              </div>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="countdown-container mt-4">
+              <h4 class="countdown-title">COUNTDOWN</h4>
+              <div id="countdown-timer" class="countdown-grid d-flex justify-content-center align-items-center gap-2">
+                <div class="countdown-unit">
+                  <span id="days" class="unit-val">00</span>
+                  <span class="unit-label">Days</span>
+                </div>
+                <span class="timer-colon">:</span>
+                <div class="countdown-unit">
+                  <span id="hours" class="unit-val">00</span>
+                  <span class="unit-label">Hours</span>
+                </div>
+                <span class="timer-colon">:</span>
+                <div class="countdown-unit">
+                  <span id="minutes" class="unit-val">00</span>
+                  <span class="unit-label">Mins</span>
+                </div>
+                <span class="timer-colon">:</span>
+                <div class="countdown-unit">
+                  <span id="seconds" class="unit-val">00</span>
+                  <span class="unit-label">Secs</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mini Calendar Widget -->
+            <div class="mini-calendar-wrapper mx-auto mt-4">
+              <div class="mini-calendar-card">
+                <div id="calendar-month-header" class="calendar-month-header"></div>
+                <div class="calendar-weekdays-grid">
+                  <span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
+                </div>
+                <div id="calendar-days-container" class="calendar-days-grid">
+                  <!-- Dynamically rendered from data.json -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Add To Calendar Button -->
+            <div class="mt-4">
+              <a id="btn-add-calendar" href="#" target="_blank" rel="noopener noreferrer" class="btn-add-calendar">
+                <i class="fa-regular fa-calendar-plus me-1"></i> Add to Calendar
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= VENUE & MAP SECTION ================= -->
+      <section class="venue-section position-relative text-center my-5 px-3">
+        <!-- Subtle Castle Sketch Watermark -->
+        <img src="assets/images/castle-background.webp" alt="Castle Sketch" class="castle-watermark castle-map" />
+
+        <h3 id="venue-title" class="venue-title"></h3>
+        <p id="venue-address" class="venue-address mb-4"></p>
+
+        <!-- Google Maps Iframe -->
+        <div class="map-card-wrapper mx-auto">
+          <iframe id="venue-map-iframe" class="venue-map-iframe" src="" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <!-- Get Directions Button -->
+        <div class="mt-3">
+          <a id="btn-directions" href="#" target="_blank" rel="noopener noreferrer" class="btn-directions">
+            <svg class="direction-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+            </svg>
+            <span>Get directions</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ================= FOOTER ================= -->
+      <footer class="invitation-footer text-center pb-5 pt-3 px-3">
+        <p id="footer-note" class="footer-note mb-3"></p>
+        <div class="footer-heart">
+          <span>♡</span>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- jQuery & Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS Logic (Fetches data.json dynamically) -->
+  <script src="script.js"></script>
+</body>
+
+</html>
