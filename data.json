@@ -29,7 +29,7 @@
     }
   },
   "venue": {
-    "sectionTitle": "OUR WEDDING VENUE",
+    "sectionTitle": "OUR WEDDING CHURCH",
     "name": "Saint Mary Coptic Orthodox Church - Ard El-Golf - Heliopolis",
     "gate": "",
     "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.4050070271905!2d31.330702110879134!3d30.082585116658347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583e1844b5decf%3A0x547eab16e6b672d8!2sSaint%20Mary%20Coptic%20Orthodox%20Church%20-%20Ard%20El-Golf%20-%20Heliopolis!5e0!3m2!1sen!2seg!4v1791826802530!5m2!1sen!2seg",
@@ -39,7 +39,7 @@
     "envelopeInvites": "Cordially Invites",
     "ceremonyTitle": "WEDDING CEREMONY INFO",
     "ceremonyQuote": "Love brought us here. You make it even more special.",
-    "partyTitle": "WEDDING PARTY INFO",
+    "partyTitle": "WEDDING CEREMONY INFO",
     "partySubtitle": "The wedding party will take place at:",
     "footerNote": "Your presence would be the greatest gift we could receive!"
   },
